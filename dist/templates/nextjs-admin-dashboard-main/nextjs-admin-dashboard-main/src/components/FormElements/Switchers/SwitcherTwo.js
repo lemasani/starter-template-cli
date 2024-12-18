@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const SwitcherTwo = () => {
+    const [enabled, setEnabled] = (0, react_1.useState)(false);
+    return (<div>
+      <label htmlFor="toggle2" className="flex cursor-pointer select-none items-center">
+        <div className="relative">
+          <input id="toggle2" type="checkbox" className="sr-only" onChange={() => {
+            setEnabled(!enabled);
+        }}/>
+          <div className="h-5 w-14 rounded-full bg-gray-3 dark:bg-[#5A616B]"></div>
+          <div className={`dot shadow-switch-2 absolute -top-1 left-0 h-7 w-7 rounded-full bg-white transition ${enabled && "!right-0 !translate-x-full !bg-primary dark:!bg-white"}`}></div>
+        </div>
+      </label>
+    </div>);
+};
+exports.default = SwitcherTwo;
